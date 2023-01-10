@@ -1,0 +1,41 @@
+<%-include('../layouts/header.ejs')  %> 
+<%-include('../layouts/menu.ejs')  %> 
+
+<div class="container mt-5">
+    <div class="row">
+        <a href="/admin/product/product-add" class="btn btn-success"> thêm sản phẩm</a>
+        <div class="col-lg-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Sale_price</th>
+                        <th>Category_id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% prod.forEach( (element,index) => { %>
+                        <tr>
+                            <td scope="row"><%= index + 1%></td>
+                            <td><%= element.ten_sp %> </td>
+                            <td><img src="/<%= element.anh_sp %> " width="150px" alt=""> </td>
+                            <td><%= element.gia_sp %> </td>
+                            <td><%= element.gia_km %> </td>
+                            <td><%= element.ma_danh_muc %> </td>
+                            <td>
+                                <a href="" class="btn btn-success">Update</a>
+                                <a href="" class="btn btn-danger">DELETE</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                   
+                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%-include('../layouts/footer.ejs')  %> 

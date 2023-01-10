@@ -1,0 +1,38 @@
+<%-include('../layouts/header.ejs')  %> 
+<%-include('../layouts/menu.ejs')  %> 
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Tên sản phẩm</label>
+                  <input type="text" class="form-control" name="ten_sp" >
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Ảnh sản phẩm</label>
+                  <input type="file" class="form-control" name="anh_sp" >
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Gía sản phẩm</label>
+                  <input type="text" class="form-control" name="gia_sp" >
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Gía khuyến mại</label>
+                  <input type="text" class="form-control" name="gia_km" >
+                </div>
+                <div class="form-group">
+                  <label for="">Mã danh mục</label>
+                  <select class="form-control" name="ma_danh_muc" id="">
+                    <% categories.forEach(element => {%>
+                        <option value="<%= element.id %> "><%= element.ten_danh_muc %> </option>
+                    <%}); %> 
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+        
+    </div>
+</div>
+<%-include('../layouts/footer.ejs')  %> 

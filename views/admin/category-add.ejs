@@ -1,0 +1,27 @@
+<%-include('./layouts/header.ejs')  %> 
+<%-include('./layouts/menu.ejs')  %> 
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <% if (typeof(errs) !=  'undefined') { %>
+                <% errs.forEach(element => { %>
+                    <div class="alert alert-danger" role="alert">
+                        <strong><%= element.message%></strong>
+                    </div>
+                <% }) %>
+            <% } %>
+            <form action="category-add" method="POST">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Tên Danh mục</label>
+                  <input type="text" class="form-control" name="ten_danh_muc" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+              
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+        
+    </div>
+</div>
+<%-include('./layouts/footer.ejs')  %> 
